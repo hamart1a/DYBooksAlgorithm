@@ -49,6 +49,7 @@ public class LinerSearch {
 
         int i;
 
+
         arrList.add(input);//보초값 추가
         for(i = 0; i < arrList.size(); i++){
             if(input == arrList.get(i)) {
