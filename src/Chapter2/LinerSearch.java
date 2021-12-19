@@ -11,19 +11,24 @@ public class LinerSearch {
 
     public static void main(String[] args) {
         int[] array = {72,68,92,88,41,53,97,84,39,55};
-        int pos, input;
-        pos = -1;
 
-        Scanner sc = new Scanner(System.in);
+        //선형검색
+//        int pos, input;
+//        pos = -1;
+//
+//        Scanner sc = new Scanner(System.in);
+//
+//        System.out.println("숫자를 입력하세요");
+//        input = sc.nextInt();
+//        sc.close();
+//
+//        //int res = linerSearch(array, input, pos);
+//        int res = sentinelLinerSearch(array, input, pos);
+//
+//        System.out.println(res);
 
-        System.out.println("숫자를 입력하세요");
-        input = sc.nextInt();
-        sc.close();
-
-        //int res = linerSearch(array, input, pos);
-        int res = sentinelLinerSearch(array, input, pos);
-
-        System.out.println(res);
+        //최댓값 최솟값 구하기
+        System.out.println(getMaxMinByLinerSearch(array));
 
 
     }
@@ -54,9 +59,24 @@ public class LinerSearch {
         for(i = 0; i < arrList.size(); i++){
             if(input == arrList.get(i)) {
                 break;
+                //보초값을 넣기 전에는 배열에 찾는 값이 검색되거나, 끝까지 검색안되거나 두가지 처리를 했는데
+                //보초값을 넣으면 전자 하나만 써도 코드가 동작함.(끝까지 검색안되도 보초값과 매치되므로)
             }
         }
         return i == arrList.size()-1 ? -1 : i;
+    }
+
+
+    //배열의 최대값과 최솟값 구하기
+    static String getMaxMinByLinerSearch(int[] arr){
+        int max = arr[0];
+        int min = arr[0];
+        for(int i=1; i< arr.length; i++){ //0부터 시작하므로 루프 카운터를 1로 잡아줌
+            if(max < arr[i]) max = arr[i];
+            if(min > arr[i]) min = arr[i];
+        }
+        return "최대값"+max+"  "+"최솟값"+min;
+
     }
 
 
