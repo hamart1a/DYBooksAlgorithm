@@ -42,6 +42,7 @@ public class BinarySearch {
             }else{
                 right = middle - 1;
             }
+            //+1, -1 의미? 검색 범위에서 제외
 
             cnt++;
         }

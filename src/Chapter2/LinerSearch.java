@@ -54,7 +54,6 @@ public class LinerSearch {
 
         int i;
 
-
         arrList.add(input);//보초값 추가
         for(i = 0; i < arrList.size(); i++){
             if(input == arrList.get(i)) {
@@ -75,9 +74,14 @@ public class LinerSearch {
             if(max < arr[i]) max = arr[i];
             if(min > arr[i]) min = arr[i];
         }
+
+
+
         return "최대값"+max+"  "+"최솟값"+min;
 
     }
+
+
 
 
 }
